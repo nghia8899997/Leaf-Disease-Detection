@@ -87,8 +87,8 @@ def main():
         model.load(MODEL_NAME)
         print('Model Loaded')
 
-    train = train_data[:-5]
-    test = train_data[-5:]
+    train = train_data[:-500]
+    test = train_data[-500:]
 
     X = np.array([i[0] for i in train]).reshape(-1,IMG_SIZE,IMG_SIZE,3)
     Y = [i[1] for i in train]
