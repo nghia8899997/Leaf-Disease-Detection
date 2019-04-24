@@ -19,7 +19,7 @@ TRAIN_DIR = 'train/train'
 TEST_DIR = 'test/test'
 IMG_SIZE = 50
 LR = 1e-3
-MODEL_NAME = 'dwij28leafdiseasedetection-{}-{}.model'.format(LR, '2conv-basic')
+MODEL_NAME = 'leafdiseasedetection-{}-{}.model'.format(LR, '2conv-basic')
 tf.logging.set_verbosity(tf.logging.ERROR) # suppress keep_dims warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' # suppress tensorflow gpu logs
 tf.reset_default_graph()
@@ -33,7 +33,7 @@ def label_leaves(leaf):
 
     if leaftype == 'h': ans = [1,0,0,0]
     elif leaftype == 'b': ans = [0,1,0,0]
-    elif leaftype == 'v': ans = [0,0,1,0]
+    elif leaftype == 'm': ans = [0,0,1,0]
     elif leaftype == 'l': ans = [0,0,0,1]
 
     return ans
