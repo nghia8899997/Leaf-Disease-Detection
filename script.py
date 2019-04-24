@@ -20,7 +20,7 @@ from tflearn.layers.estimator import regression
 
 IMG_SIZE = 50
 LR = 1e-3
-MODEL_NAME = 'dwij28leafdiseasedetection-{}-{}.model'.format(LR, '2conv-basic')
+MODEL_NAME = 'leafdiseasedetection-{}-{}.model'.format(LR, '2conv-basic')
 tf.logging.set_verbosity(tf.logging.ERROR) # suppress keep_dims warnings
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' # suppress tensorflow gpu logs
 
@@ -103,7 +103,7 @@ def analysis(filepath):
 
 	if np.argmax(model_out) == 0: str_label = 'Healthy'
 	elif np.argmax(model_out) == 1: str_label = 'Bacterial'
-	elif np.argmax(model_out) == 2: str_label = 'Viral'
+	elif np.argmax(model_out) == 2: str_label = 'Mold'
 	elif np.argmax(model_out) == 3: str_label = 'Lateblight'
 
 	if str_label =='Healthy': status = 'Healthy'
