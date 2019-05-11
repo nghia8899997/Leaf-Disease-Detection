@@ -111,7 +111,11 @@ def analysis(filepath):
 
 	result = 'Status: ' + status + '.'
 	
-	if (str_label != 'Healthy'): result += '\nDisease: ' + str_label + '.'
+	if (str_label != 'Healthy'): result += '\nDisease: ' + str_label + '.' + '\nRemedies: '
+	if (str_label == 'Bacterial'): result += '\n1. Field sanitation' + '\n2. Crop rotation' + '\n3. Spraying the plants with a mixture of Streptocycline and Copper oxychloride with water'
+	if (str_label == 'Lateblight'): result += '\n1. Remove and destroy infected leaves' + '\n2. Treat organically with copper spray' + '\n3. Use biofungicide like Serenade' + '\n4.Use chemical fungicides like Fungonil or Daconil'
+	if (str_label == 'Mold'): result += '\n1. Use resistant cultivars like caruso or capello' + '\n2. Spray fungicides containing Chlorothalonil and copper'
+	result += '\nFor more information go to http://www.ikisan.com'
 
 	return result
 
